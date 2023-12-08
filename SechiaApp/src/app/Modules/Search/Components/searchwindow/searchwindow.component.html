@@ -1,0 +1,51 @@
+<div class="search-window">
+  <div class="filter-container">
+    <input type="search" class="form-control rounded search" placeholder="Pretraži" [(ngModel)]="this.nameFilter" (input)="this.filter()"/>
+    <div class="category">
+      <label>Kategorija</label>
+      <select class="form-control" [(ngModel)]="this.selectedCategory" (change)="this.filter()">
+        <option [ngValue]="this.selected" selected>Sve</option>
+        <option *ngFor="let category of this.categories" [value]="category.id" >{{category.name}}</option>
+      </select>
+    </div>
+    <div>
+      <label>Prostorija</label>
+      <select class="form-control" [(ngModel)]="this.selectedRoom" (change)="this.filter()">
+        <option [ngValue]="this.selected" selected>Sve</option>
+        <option *ngFor="let room of this.rooms" [value]="room.id">{{room.name}}</option>
+      </select>
+    </div>
+      <div class="landing-left-bottom" (click)="LoadCart()">
+        <img src="/assets/img/shopping-cart.png" class="shopping-cart">
+      </div>
+  </div>
+  <div class="grid-container">
+    <app-product-grid-component class="grid" [products]="this.filteredProducts" > </app-product-grid-component>
+  </div>
+
+  <div *ngIf="this.isCartClicked" class="modal fade show" id="exampleModalLive" tabindex="-1" aria-labelledby="exampleModalLiveLabel" aria-modal="true" role="dialog" style="display: block;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLiveLabel">Korpa</h5>
+          <button type="button" class="btn-exit" aria-label="Close" (click)="this.isCartClicked=false"></button>
+        </div>
+
+        <div class="mb-3">
+          <table class="table table-bordered table" >
+            <tr *ngFor="let x of  this.selectedProducts; let i=index">
+              <td>{{x.name}}</td>
+              <td>{{x.price}}KM</td>
+              <td>{{this.findQuantity(x)}}</td>
+              <td><img src="/assets/img/button-x.png" class="x-btn tbl" (click)="deleteFromCart(i)"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="sechia-main-button" (click)="Buy()">Kupi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

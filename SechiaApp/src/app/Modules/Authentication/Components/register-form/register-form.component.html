@@ -1,0 +1,82 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="registerForm" class="form-group">
+  <div class="form-row mt-2 mt-2">
+    <div class="col">
+      <input
+        [ngClass]="{'is-invalid': isNameInvalid()}"
+        class="form-control"
+        formControlName="name"
+        id="name"
+        placeholder="Ime"
+        type="text">
+      <div
+        *ngIf="isNameInvalid()"
+        class="invalid-feedback">
+        Ime je obavezno.
+      </div>
+    </div>
+    <div class="col">
+      <input
+        [ngClass]="{'is-invalid': isSurnameInvalid()}"
+        class="form-control"
+        formControlName="surname" id="surname" placeholder="Prezime" type="text">
+      <div
+        *ngIf="isSurnameInvalid()"
+        class="invalid-feedback">
+        Prezime je obavezno.
+      </div>
+    </div>
+  </div>
+
+  <input
+    [ngClass]="{'is-invalid': isEmailInvalid()}"
+    class="form-control mt-2" formControlName="email" id="email" placeholder="Email" type="email">
+  <div
+    *ngIf="isEmailInvalid()"
+    class="invalid-feedback">
+    Ispravan email je obavezan.
+  </div>
+
+  <input
+    [ngClass]="{'is-invalid': isPhoneNumberInvalid()}"
+    class="form-control mt-2" formControlName="phoneNumber" id="phone" placeholder="Telefon" type="tel">
+  <div
+    *ngIf="isPhoneNumberInvalid()"
+    class="invalid-feedback">
+    Broj telefona je obavezan.
+  </div>
+
+  <input
+    [ngClass]="{'is-invalid': isPasswordInvalid()}"
+    class="form-control mt-2" formControlName="password" id="password" placeholder="Lozinka" type="password">
+  <div
+    *ngIf="isPasswordInvalid()"
+    class="invalid-feedback">
+    Lozinka je obavezna.
+  </div>
+
+  <div class="form-group" formGroupName="address">
+    <p class="address-group-title mt-3">Adresa</p>
+    <input
+      [ngClass]="{'is-invalid': isStreetInvalid()}"
+      class="form-control mt-2" formControlName="street" id="street" placeholder="Ulica" type="text">
+    <div
+      *ngIf="isStreetInvalid()"
+      class="invalid-feedback">
+      Adresa je obavezna.
+    </div>
+    <div class="form-row mt-2">
+      <div class="col-8">
+        <label for="cityId">Grad: </label>
+        <select (change)="onCitySelected()" class="form-control" formControlName="cityId" id="cityId">
+          <option *ngFor="let city of cities" [selected]="city.id==1" [value]="city.id">{{city.name}}</option>
+        </select>
+      </div>
+      <div class="col">
+        <label for="postalCode">PPT: </label>
+        <input [value]="postalCode" class="form-control" id="postalCode" readonly type="text">
+      </div>
+    </div>
+  </div>
+  <p style="text-align: center">Imaš račun?  <a routerLink="/login">Prijavi se!</a></p>
+  <button class="sechia-main-button mt-2" type="submit">Registriraj se</button>
+</form>

@@ -1,0 +1,28 @@
+<div class="admin-page">
+    <div class="panel-container">
+        <div class="panel-title-container">
+            <h1 class="panel-title">Sechia</h1>
+            <p class="panel-title-admin">{{this.isAdmin() ? "Admin" : "Prodavac"}}</p>
+        </div>
+        <div class="panel-list-container">
+            <ul class="panel-list">
+                <li class="list-item" (click)="selected('home')">Home</li>
+                <li class="list-item" (click)="selected('products')">Proizvodi</li>
+                <li class="list-item" (click)="selected('categories')">Kategorije</li>
+                <li class="list-item" (click)="selected('rooms')">Prostorije</li>
+                <li class="list-item" (click)="selected('orders')">Narudzbe</li>
+                <li class="list-item" (click)="selected('special-orders')">Posebne Narudzbe</li>
+                <li *ngIf="this.isAdmin()" class="list-item" (click)="selected('sellers')">Prodavaci</li>
+            </ul>
+        </div>
+    </div>
+    <div class="content-container" [ngSwitch]="this.currentContent">
+        <app-admin-home *ngSwitchCase="'home'"></app-admin-home>
+        <app-admin-products *ngSwitchCase="'products'"></app-admin-products>
+        <app-admin-categories *ngSwitchCase="'categories'"></app-admin-categories>
+        <app-admin-rooms *ngSwitchCase="'rooms'"></app-admin-rooms>
+        <app-admin-orders *ngSwitchCase="'orders'"></app-admin-orders>
+        <div *ngSwitchCase="'special-orders'">Div6</div>
+      <app-admin-sellers  *ngSwitchCase="'sellers'"> </app-admin-sellers>
+    </div>
+</div>

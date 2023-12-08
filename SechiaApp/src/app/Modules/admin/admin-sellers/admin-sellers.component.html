@@ -1,0 +1,31 @@
+<div class="right-panel">
+  <input type="search" class="form-control rounded search" placeholder="Pretrazi" [(ngModel)]="this.nameFilter" (input)="this.nameFilterChanged()"/>
+  <table class="table table-bordered table" >
+    <thead>
+    <tr>
+      <th>Ime</th>
+      <th>Prezime</th>
+      <th>Email</th>
+      <th>Broj telefona</th>
+      <th>Datum rođenja</th>
+      <th>Spol</th>
+      <th>JMBG</th>
+    </tr>
+    </thead>
+    <tr *ngFor="let x of  this.filteredSellers">
+      <td>{{x.name}}</td>
+      <td>{{x.surname}}</td>
+      <td>{{x.email}}</td>
+      <td>{{x.phoneNumber}}</td>
+      <td>{{x.birthDate}}</td>
+      <td>{{x.gender}}</td>
+      <td>{{x.jmbg}}</td>
+      <td><button (click)="Delete(x.email)">Obrisi</button></td>
+    </tr>
+  </table>
+  <button class="add-product btn btn-primary" style="background-color: #f4d35e; border-color: #f4d35e" (click)="addSellerClicked()">Dodaj novog prodavaca</button>
+</div>
+<div class="grid-container">
+
+</div>
+

@@ -1,0 +1,17 @@
+.right-panel {
+    width: 20%;
+    height: 100%;
+    float: right;
+    background-color: #212121;
+    padding: 16px;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+}
+
+.grid-container {
+    width: 80%;
+    float: left;
+    padding-top: 80px;
+}

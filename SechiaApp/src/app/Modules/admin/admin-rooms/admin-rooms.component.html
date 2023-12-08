@@ -1,0 +1,37 @@
+<div class="main-background-color">
+  <div class="container">
+    <table class="table table-bordered table" >
+      <thead>
+      <tr>
+        <th>Naziv</th>
+      </tr>
+      </thead>
+      <tr *ngFor="let x of  this.rooms">
+        <td>{{x.name}}</td>
+      </tr>
+    </table>
+    <button class="add-product btn btn-primary" style="background-color: #f4d35e; border-color: #f4d35e" (click)="addRoomClicked()">Dodaj novu prostoriju</button>
+  </div>
+</div>
+
+
+<div *ngIf="this.isClicked" class="modal fade show" id="exampleModalLive" tabindex="-1" aria-labelledby="exampleModalLiveLabel" aria-modal="true" role="dialog" style="display: block;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLiveLabel">Nova prostorija</h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="this.isClicked=false"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label class="form-label">Naziv</label>
+          <input class="form-control" placeholder="Naziv" [(ngModel)]="this.room">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="this.isClicked=false">Zatvori</button>
+        <button type="button" class="btn btn-primary sechia-main-button" (click)="saveChanges()">Dodaj prostoriju</button>
+      </div>
+    </div>
+  </div>
+</div>

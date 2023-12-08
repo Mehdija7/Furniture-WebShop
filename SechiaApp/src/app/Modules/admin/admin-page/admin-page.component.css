@@ -1,0 +1,48 @@
+.admin-page {
+    width: 100vw;
+    height: 100vh;
+}
+
+.admin-page > div {
+    float: left;
+}
+
+.panel-container {
+    width: 25%;
+    height: 100%;
+    padding-left: 46px;
+    padding-top: 46px;
+    background-color: #212121;    
+    color: white;
+}
+
+.panel-title {
+    font-size: 66px;
+    font-family: 'Monoton', sans-serif;
+}
+
+.panel-title-admin {
+    font-family: 'Lato', sans-serif;
+    color: #f4d35e;
+}
+
+.panel-list {
+    margin-top: 46px;
+    list-style: none;
+    padding: 0px;
+}
+
+.list-item {
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+    margin-bottom: 18px;
+    letter-spacing: 0.2rem;
+}
+
+.content-container {
+    width: 75%;
+    height: 100%;
+    overflow: auto;
+}

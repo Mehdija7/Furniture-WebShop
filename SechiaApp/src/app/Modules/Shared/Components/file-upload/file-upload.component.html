@@ -1,0 +1,16 @@
+<div>
+    <div>
+        <label>Slika</label>
+        <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;"
+            multiple>
+        <img class="image-upload-preview" [src]="fileUrl" (click)="file.click()">
+    </div>
+    <div>
+        <span class="upload" *ngIf="progress > 0">
+            {{progress}}%
+        </span>
+        <span class="upload" *ngIf="message">
+            {{message}}
+        </span>
+    </div>
+</div>

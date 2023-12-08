@@ -1,0 +1,25 @@
+<div class="main-background">
+  <div class="content">
+     <h3>Nove narudzbe: </h3>
+     <div class="orders">
+      <table class="table table-bordered table" >
+        <thead>
+        <tr>
+          <th>Kupac</th>
+          <th>Ukupna cijena</th>
+        </tr>
+        </thead>
+        <tr *ngFor="let x of  this.orders">
+          <td>{{x.customerId}}</td>
+          <td>{{x.totalPrice}}</td>
+        </tr>
+      </table>
+      <div *ngIf="orders">
+        <div *ngFor="let item of orders[0].items">
+          <p>{{ item.productId }}</p>
+          <p>{{item.quantity}}</p>
+        </div>
+      </div>
+     </div>
+  </div>
+</div>

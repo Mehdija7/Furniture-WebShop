@@ -1,0 +1,7 @@
+<div class="right-panel">
+    <input type="search" class="form-control rounded search" placeholder="Pretrazi" [(ngModel)]="this.nameFilter" (input)="this.nameFilterChanged()"/>
+    <button class="add-product btn btn-primary sechia-main-button" (click)="addProductClicked()">Dodaj novi proizvod</button>
+</div>
+<div class="grid-container">
+    <app-product-grid-component [products]="filteredProducts"></app-product-grid-component>
+</div>

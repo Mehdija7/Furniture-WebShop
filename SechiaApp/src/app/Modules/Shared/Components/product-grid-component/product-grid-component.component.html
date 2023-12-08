@@ -1,0 +1,19 @@
+<div class="product-grid-container">
+    <div *ngFor="let product of this.products" class="product-grid-item" >
+      <div (click)="this.tapedProductWithId(product.id)" class="product-item">
+        <div class="image-container">
+            <img [src]="createImgPath(product.image)" class="product-image">
+        </div>
+        <div class="info-container">
+            <h3 class="product-title">{{product.name}}</h3>
+            <h4 class="product-description">{{product.shortDescription}}</h4>
+            <h4 class="product-price">{{product.price}}KM</h4>
+        </div>
+      </div>
+
+      <button class="sechia-main-button btns" (click)="addNewItem(product)">Dodaj u korpu</button>
+      <div class="heart" (click)="addToWhishList(product)" >
+        <img src="/assets/img/empty-heart1.png" class="empty-heart">
+      </div>
+    </div>
+</div>

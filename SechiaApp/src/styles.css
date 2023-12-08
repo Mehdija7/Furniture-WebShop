@@ -1,0 +1,40 @@
+.main-background-color
+{
+  background-color: #f4d35e;
+}
+.fullscreen-container
+{
+  height: 100vh;
+  width: 100vw;
+}
+body
+{
+  margin: 0;
+  padding: 0;
+}
+/* You can add global styles to this file, and also import other style files */
+
+.sechia-main-button {
+  display: inline-block;
+  background-color: #f4d35e;
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.sechia-main-button:hover {
+  box-shadow: 0 2px 3px rgba(33, 33, 33, 0.39);
+}
+
+.sechia-main-button:focus {
+  outline: none;
+}
+
+.sechia-main-button:active {
+  box-shadow: 0 2px 3px 2px rgba(33, 33, 33, 0.31);
+}

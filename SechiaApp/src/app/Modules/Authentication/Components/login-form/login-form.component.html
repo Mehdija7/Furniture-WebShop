@@ -1,0 +1,9 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="loginForm" id="form">
+  <div class="form-row mb-2 mt-2">
+    <input id="email" class="form-control mb-2" type="text" formControlName="email" placeholder="Email">
+    <input id="password" class="form-control mb-2" type="password" formControlName="password" placeholder="Lozinka">
+  </div>
+  <p *ngIf="!this.isValidate" style="color: darkred">Neispravan unos emaila ili lozinke</p>
+  <p style="text-align: center">Nemaš račun?  <a routerLink="/register">Registriraj se!</a></p>
+  <button class="sechia-main-button mt-2" type="submit">Prijavi se</button>
+</form>

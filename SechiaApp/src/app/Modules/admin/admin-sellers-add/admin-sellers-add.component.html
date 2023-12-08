@@ -1,0 +1,85 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="registerForm" class="form-group">
+  <div class="form-row mt-2 mt-2">
+    <div class="col">
+      <input
+        [ngClass]="{'is-invalid': isNameInvalid()}"
+        class="form-control"
+        formControlName="name"
+        id="name"
+        placeholder="Ime"
+        type="text">
+      <div
+        *ngIf="isNameInvalid()"
+        class="invalid-feedback">
+        Ime je obavezno.
+      </div>
+    </div>
+    <div class="col">
+      <input
+        [ngClass]="{'is-invalid': isSurnameInvalid()}"
+        class="form-control"
+        formControlName="surname" id="surname" placeholder="Prezime" type="text">
+      <div
+        *ngIf="isSurnameInvalid()"
+        class="invalid-feedback">
+        Prezime je obavezno.
+      </div>
+    </div>
+  </div>
+
+  <input
+    [ngClass]="{'is-invalid': isGenderInvalid()}"
+    class="form-control mt-2" formControlName="gender" id="gender" placeholder="Spol" type="text">
+  <div
+    *ngIf="isGenderInvalid()"
+    class="invalid-feedback">
+    Spol je obavezno polje.
+  </div>
+
+  <input
+    [ngClass]="{'is-invalid': isPhoneNumberInvalid()}"
+    class="form-control mt-2" formControlName="phoneNumber" id="phone" placeholder="Telefon" type="text">
+  <div
+    *ngIf="isPhoneNumberInvalid()"
+    class="invalid-feedback">
+    Broj telefona je obavezan.
+  </div>
+
+  <input
+    [ngClass]="{'is-invalid': isJMBGInvalid()}"
+    class="form-control mt-2" formControlName="jmbg" id="jmbg" placeholder="JMBG" type="text">
+  <div
+    *ngIf="isJMBGInvalid()"
+    class="invalid-feedback">
+    JMBG je obavezan.
+  </div>
+
+  <input
+    [ngClass]="{'is-invalid': isDateInvalid()}"
+    class="form-control mt-2" formControlName="birthDate" id="date" placeholder="Datum rodjenja" type="date">
+  <div
+    *ngIf="isDateInvalid()"
+    class="invalid-feedback">
+    Datum je obavezan.
+  </div>
+
+  <input
+    [ngClass]="{'is-invalid': isEmailInvalid()}"
+    class="form-control mt-2" formControlName="email" id="email" placeholder="Email" type="email">
+  <div
+    *ngIf="isEmailInvalid()"
+    class="invalid-feedback">
+    Ispravan email je obavezan.
+  </div>
+
+  <input
+    [ngClass]="{'is-invalid': isPasswordInvalid()}"
+    class="form-control mt-2" formControlName="password" id="password" placeholder="Lozinka" type="password">
+  <div
+    *ngIf="isPasswordInvalid()"
+    class="invalid-feedback">
+    Lozinka je obavezna.
+  </div>
+  <button class="sechia-main-button mt-2" type="submit">Registriraj prodavaca</button>
+</form>
+

@@ -1,0 +1,13 @@
+.address-group-title {
+  font-family: "Lato", serif;
+  font-size: 18px;
+  color: #212121;
+  font-weight: normal;
+  padding-left: 2px;
+  margin-bottom: 6px
+}
+
+#register-button {
+  border-radius: 16px;
+}
+

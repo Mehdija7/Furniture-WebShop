@@ -1,0 +1,72 @@
+<div class="background-div">
+
+  <nav class="navbar">
+    <a href="#" class="navbar-brand">Sechia</a>
+    <ul class="navbar-items">
+      <li class="navbar-item">
+        <a href="#" class="navbar-link">O nama</a>
+      </li>
+      <li class="navbar-item">
+        <a href="#" class="navbar-link">Početna</a>
+      </li>
+      <li class="navbar-item">
+        <a href="#" class="navbar-link">Korpa</a>
+      </li>
+      <li class="navbar-item">
+        <a href="#" class="navbar-link">Profil</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="home-content">
+    <h1 class="big-title">SECHIA</h1>
+    <div class="intro">
+      <p class="intro-short">Uzivajte u vasem interijeru zahvaljajući širokoj ponudi iz našeg
+        asortimana.
+        Od modernih i unikatnih uglovnica do kuhinjskih stolica, stolova
+        i ormara za spavace sobe.
+      </p>
+      <div class="intro-stats">
+        <div class="stat">
+          <div class="number">
+            <span class="number-stat">{{numberOfCustomers}}k</span>
+            <span class="number-stat-plus">+</span>
+          </div>
+          <p class="stat-description">Sretnih klijenata</p>
+        </div>
+        <div class="stat">
+          <div class="number">
+            <span class="number-stat">{{numberOfProducts}}k</span>
+            <span class="number-stat-plus">+</span>
+          </div>
+          <p class="stat-description">Prodanih proizvoda</p>
+        </div>
+        <div class="stat">
+          <div class="number">
+            <span class="number-stat">{{numberOfCreatedProducts}}</span>
+            <span class="number-stat-plus">+</span>
+          </div>
+          <p class="stat-description">Kreiranih proizvoda</p>
+        </div>
+      </div>
+    </div>
+    <div class="landing-gallery">
+      <div class="landing-left">
+        <div class="small-image-container">
+        </div>
+        <div class="landing-image-container">
+          <video class="landing-video" loop autoplay="autoplay" muted>
+            <source src="assets/landing-video.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="landing-right">
+        <div class="landing-right-top">
+        </div>
+        <div class="landing-right-bottom" (click)="LoadSearchScreen()">
+          <img src="/assets/img/search-icon.png" class="search-icon">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

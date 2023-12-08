@@ -1,0 +1,15 @@
+.upload {
+    font-weight:bold;
+    color:#f4d35e;
+    margin-left: 15px;
+    line-height: 36px;
+}
+
+.image-upload-preview {
+    display: block;
+    width: 100%;
+    height: 360px;
+    cursor: pointer;
+    border: 1px dashed black;
+}
+  

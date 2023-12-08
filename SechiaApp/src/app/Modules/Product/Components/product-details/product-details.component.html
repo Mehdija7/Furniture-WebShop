@@ -1,0 +1,25 @@
+<div class="page-container">
+    <div class="product-details-container">
+        <div class="image-container">
+            <img [src]="this.createImgPath(this.product.image)" alt="" class="product-image">
+            <div class="variants">
+                <img src="assets/img/image-placeholder.PNG" alt="" class="variant">
+                <img src="assets/img/image-placeholder.PNG" alt="" class="variant">
+                <img src="assets/img/image-placeholder.PNG" alt="" class="variant">
+                <img src="assets/img/image-placeholder.PNG" alt="" class="variant">
+                <img src="assets/img/image-placeholder.PNG" alt="" class="variant">
+            </div>
+        </div>
+        <div class="details-container">
+            <h1 class="product-title">{{ this.product.name }}</h1>
+            <p class="short-desc">{{ this.product.shortDescription }}<p>
+            <p class="dimens">{{ this.product.dimension }}</p>
+            <p class="price">{{ this.product.price }} KM</p>
+            <p class="long-desc">{{ this.product.longDescription }}</p>
+            <button class="sechia-main-button" (click)="this.addItem()">Kupi</button>
+          <div class="heart"  (click)="addToWhishList(product)">
+            <img src="/assets/img/empty-heart1.png" class="empty-heart">
+          </div>
+        </div>
+    </div>
+</div>

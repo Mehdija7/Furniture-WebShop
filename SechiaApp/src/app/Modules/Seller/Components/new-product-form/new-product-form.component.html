@@ -1,0 +1,44 @@
+<form [formGroup]="newProductForm" (ngSubmit)="onSubmit()" class="new-product-form" id="form">
+    <div class="left-half-container">
+        <div class="form-row mb-2 mt-2">
+            <label for="name">Naziv</label>
+            <input type="text" class="form-control" formControlName="name" id="name">
+        </div>
+        <div class="form-row mb-2 mt-2">
+            <label for="shortDescription">Kratki Opis</label>
+            <input type="text" class="form-control" formControlName="shortDescription" id="shortDescription">
+        </div>
+        <div class="form-row mb-2 mt-2">
+            <label for="shortDescription">Opis</label>
+            <textarea class="form-control" formControlName="longDescription" name="longDescription" id="longDescription"
+                cols="30" rows="6"></textarea>
+        </div>
+        <div class="form-row mb-2 mt-2">
+            <label>Kategorija</label>
+            <select class="form-control" formControlName="categoryId" [(ngModel)]="this.newProductForm.value.categoryId">
+                <option *ngFor="let category of this.categories" [selected]="category.id==1" [value]="category.id">{{category.name}}</option>
+            </select>
+        </div>
+        <div class="form-row mb-2 mt-2">
+            <label>Soba</label>
+            <select class="form-control" formControlName="roomId" [(ngModel)]="this.newProductForm.value.roomId">
+                <option *ngFor="let room of this.rooms" [selected]="room.id==1" [value]="room.id">{{room.name}}</option>
+            </select>
+        </div>
+        <div class="form-row mb-2 mt-2">
+            <label for="price">Cijena</label>
+            <input type="number" class="form-control" formControlName="price" id="price">
+        </div>
+    </div>
+
+    <div class="right-half-container">
+        <div class="form-row mb-2 mt-2">
+            <app-file-upload (onUploadFinished)="uploadFinished($event)"></app-file-upload>
+        </div>
+        <div class="form-row mb-2 mt-2">
+            <label for="dimension">Dimenzije</label>
+            <input type="text" class="form-control" formControlName="dimension" id="dimension" placeholder="npr. 20x30x20cm">
+        </div>
+        <button class="mt-4 sechia-main-button" type="submit">Kreiraj novi proizvod</button>
+    </div>
+</form>

@@ -1,0 +1,18 @@
+.new-product-form {
+    padding: 40px 40px;
+    background-color: white;
+    border-radius: 16px;
+    display: flex;
+}
+
+.left-half-container, .right-half-container {
+    width: 50%;
+    padding: 0 16px;
+}
+
+.left-half-container {
+}
+
+.right-half-container {
+    padding-left: 30px;
+}

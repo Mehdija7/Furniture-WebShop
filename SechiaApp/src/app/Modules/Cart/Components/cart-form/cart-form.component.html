@@ -1,0 +1,101 @@
+<form  [formGroup]="cartForm" class="form-group " class="frm">
+  <div class="form-row mt-2 mt-2">
+    <div class="col">
+      <input
+        class="form-control"
+        formControlName="name"
+        id="name"
+        placeholder="{{this.customer.name}}"
+        readonly
+        type="text">
+      <!--
+      <div
+        *ngIf="isNameInvalid()"
+        class="invalid-feedback">
+        Ime je obavezno.
+      </div>
+      -->
+    </div>
+    <div class="col">
+      <input
+        class="form-control"
+        readonly
+        formControlName="surname" id="surname"  placeholder="{{this.customer.surname}}"type="text">
+      <!--
+      <div
+        *ngIf="isSurnameInvalid()"
+        class="invalid-feedback">
+        Prezime je obavezno.
+      </div>
+      -->
+    </div>
+  </div>
+
+  <input
+    class="form-control mt-2" formControlName="email" id="email" readonly placeholder="{{this.customer.email}}" type="email">
+  <!--
+  <div
+    *ngIf="isEmailInvalid()"
+    class="invalid-feedback">
+    Ispravan email je obavezan.
+  </div>
+  -->
+  <input
+    class="form-control mt-2" formControlName="phoneNumber" id="phone" placeholder="{{this.customer.phoneNumber}}" readonly type="tel">
+  <!--
+  <div
+    *ngIf="isPhoneNumberInvalid()"
+    class="invalid-feedback">
+    Broj telefona je obavezan.
+  </div>
+   -->
+  <div class="form-group" formGroupName="address">
+    <p class="address-group-title mt-3">Adresa</p>
+    <input
+      class="form-control mt-2" formControlName="street" id="street" placeholder="{{this.customer.address.street}}" type="text" readonly>
+    <!--
+    <div
+      *ngIf="isStreetInvalid()"
+      class="invalid-feedback">
+      Adresa je obavezna.
+    </div>
+    -->
+    <div class="form-row mt-2">
+      <div class="col-8">
+        <!--
+        <label for="cityId">Grad: </label>
+        <select (change)="onCitySelected()" class="form-control" formControlName="cityId" id="cityId">
+          <option *ngFor="let city of cities" [selected]="city.id==this.customer.address.city.id" [value]="city.id">{{this.customer.address.city.name}}</option>
+        </select>
+        -->
+        <label for="cityId">Grad: </label>
+        <select  class="form-control" formControlName="cityId" id="cityId" >
+          <option  [selected]="this.customer.address.city.id" >{{this.customer.address.city.name}}</option>
+        </select>
+      </div>
+      <div class="col">
+        <label for="postalCode">PPT: </label>
+        <input placeholder="{{this.customer.address.city.postalNumber}}" class="form-control" id="postalCode" readonly type="text">
+      </div>
+    </div>
+  </div>
+  <div tabindex="-1" aria-labelledby="exampleModalLiveLabel" aria-modal="true" role="dialog" style="display: block; " >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLiveLabel">Korpa</h5>
+        </div>
+        <table class="table table-bordered table" >
+          <tr *ngFor="let x of  this.cartItems">
+            <td>{{x.name}}</td>
+            <td>{{x.price}}KM</td>
+            <td>{{this.findQuantity(x)}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <label><strong>Ukupno:</strong>{{this.total}}KM</label>
+  <p *ngIf="this.isValidate" style="color: darkred">Neispravan unos</p>
+  <button class="sechia-main-button mt-2" type="submit" (click)="Buy()">Naruči</button>
+</form>

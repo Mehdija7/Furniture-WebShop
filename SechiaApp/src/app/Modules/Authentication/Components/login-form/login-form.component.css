@@ -1,0 +1,11 @@
+#register-button {
+  border-radius: 16px;
+}
+a
+{
+  color:darkblue;
+}
+a:hover
+{
+  color:blue;
+}
